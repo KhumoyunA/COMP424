@@ -1,12 +1,16 @@
-A1 CS424 
+A2 CS424 
 Khumoyun Abdulpattoev
 
-The task for the Assignment 1 was to create a single interactive web page with the help of HTML, CSS, and JS. It is intended to be a landing page for a student-run blog where anyone can sign up for. Obviously, it is just the first step.
+The form is created to allow new users to sign up to the website using their name, email, and password. 
 
-Semantic structure is as follows: header (contains page title, nav, and theme toggle), nav (all navigation links), main (main page content and the sign-up section), and footer (contains course info).
+Inputs:
+    name: length >= 2 and contains only letters and spaces  
+    email: pattern of letter and number combination followed by @, then letters, then dot, then letters for domain
+    password: length >= 8 
+    verify-password: match the value with that of the password field
 
-The accessibility choice I made is having aria-label="Primary," so when the screen reading tool reads it, it helps to distinguish that these links in the navigation are the primary links distinct from other links that may show up inside the main for example. 
+Each field error appears right under it and is of red color. Error appear only in two cases: if the form is submitted but there are errors or if the field has been touched and a proper input has not yet been provided. When the user fixes an error with the field, the error message simply disappears.
 
-The responsive choice I made is using flex-wrap: wrap in header. The navigation and title wrap on a smaller screen so the header look neat.
+At the bottom of the form, there is a form message, i.e tells if the form has been successfully submitted (green) or there are errors requiring user's attention (red). 
 
-The Js interaction is the email input form. A user enters their email address, which is validated, then if valid, the message pops up under the sign up button saying we have received the email address. The state is managed in the DOM. The script reads the value of the input field.
+ I used the to debug the validation logic by logging the "touched" object state and validation results before updating DOM elements, which helped me verify that field-level errors were being triggered correctly only for touched fields.
